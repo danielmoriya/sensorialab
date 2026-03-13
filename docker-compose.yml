@@ -1,0 +1,23 @@
+services:
+  db:
+    image: postgres:17-alpine
+    container_name: sensorialab-db
+    environment:
+      POSTGRES_USER: sensorialab_user
+      POSTGRES_PASSWORD: sensorialab_password
+      POSTGRES_DB: sensorialab_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    container_name: sensorialab-jaeger
+    ports:
+      - "16686:16686" # UI
+      - "4317:4317"   # OTLP gRPC
+      - "4318:4318"   # OTLP HTTP
+
+volumes:
+  postgres_data:

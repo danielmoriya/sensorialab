@@ -1,0 +1,8 @@
+<Solution>
+  <Project Path="Sensorialab.Api/Sensorialab.Api.csproj" />
+  <Project Path="Sensorialab.Application/Sensorialab.Application.csproj" />
+  <Project Path="Sensorialab.Domain/Sensorialab.Domain.csproj" />
+  <Project Path="Sensorialab.Infrastructure/Sensorialab.Infrastructure.csproj" />
+  <Project Path="Sensorialab.Shared/Sensorialab.Shared.csproj" />
+  <Project Path="Sensorialab.Tests/Sensorialab.Tests.csproj" />
+</Solution>
