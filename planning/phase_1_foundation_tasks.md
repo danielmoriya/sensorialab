@@ -47,7 +47,7 @@ This document breaks down Phase 1 into granular, actionable tasks for implementa
 - [x] Add a `docker-compose.yml` at the solution root to spin up a local PostgreSQL instance.
 - [x] Define the default PostgreSQL connection string in `appsettings.Development.json` of the API project.
 - [x] Register `AppDbContext` in the API `Program.cs` DI container using the connection string.
-- [ ] (Optional at this stage but recommended) Create an initial, empty EF Core migration to verify connectivity (`dotnet ef migrations add InitialCreate`).
+- [x] (Optional at this stage but recommended) Create an initial, empty EF Core migration to verify connectivity (`dotnet ef migrations add InitialCreate`).
 
 ## 4. Observability Setup (OpenTelemetry)
 - [x] Add OpenTelemetry NuGet packages to `Sensorialab.Api`:
@@ -58,8 +58,8 @@ This document breaks down Phase 1 into granular, actionable tasks for implementa
   - [x] `OpenTelemetry.Exporter.OpenTelemetryProtocol` (OTLP) or `OpenTelemetry.Exporter.Console` (for initial testing).
 - [x] Configure OpenTelemetry in `Program.cs` (Tracing, Metrics, Logging).
 - [x] Add a local observability backend (e.g., Jaeger or Prometheus) to the `docker-compose.yml` alongside PostgreSQL.
-- [ ] Configure the OTLP exporter in `appsettings.json` to point to the local backend.
-- [ ] Test tracing by making a request to the API and checking the backend UI.
+- [x] Configure the OTLP exporter in `appsettings.json` to point to the local backend.
+- [x] Test tracing by making a request to the API and checking the backend UI.
 
 ## 5. Architecture Tests & CI/CD Pipeline
 - [x] Add the `NetArchTest.Rules` NuGet package to `Sensorialab.Tests`.
@@ -71,7 +71,7 @@ This document breaks down Phase 1 into granular, actionable tasks for implementa
   - [x] Run `dotnet format --verify-no-changes` (Linting check).
   - [x] Run `dotnet build`.
   - [x] Run `dotnet test` with coverage collection (e.g., using `coverlet.collector`).
-  - [ ] Add a step to enforce the >70% line coverage requirement (using tools like `ReportGenerator` or a custom script to parse the coverage output and fail the build if below 70%).
+  - [x] Add a step to enforce the >70% line coverage requirement (using `irongut/CodeCoverageSummary`).
 
 ## Checkpoint & Review
 - [x] Run `docker-compose up -d`.
